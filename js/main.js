@@ -31,7 +31,9 @@ const productosDeportivos = [
     }
 ]
 
-let cardArticle = []
+// Mejora para mantener el carrito actualizado al agregar un nuevo artículo. 
+
+let cardArticle = JSON.parse(localStorage.getItem("cardArticles")) || []
 
 let articleContainer = document.getElementById("article-container")
 
@@ -43,7 +45,7 @@ function renderizarArticulos(articlesArray) {
     articlesArray.forEach(article => {
         const card = document.createElement("div")
         card.className = "col"
-
+        // Al hacer clic en el botón, se obtiene el id del artículo, se encuentra en el array productosDeportivos y se agrega al array cardArticle.
         card.innerHTML = `
             <div class="card h-100 border-dark bg-light text-dark">
                 <div class="card-body d-flex flex-column justify-content-between text-center">
@@ -58,19 +60,20 @@ function renderizarArticulos(articlesArray) {
         `
         row.appendChild(card)
     })
+    // Se agregó la función agregarAlCarrito() que se llama después de renderizar los artículos para asignar el evento onclick a cada botón de agregar al carrito.
     agregarAlCarrito()
 }
 
 renderizarArticulos(productosDeportivos)
 
 function agregarAlCarrito () {
-    addButton = document.querySelectorAll(".articleAdd")
+    const addButton = document.querySelectorAll(".articleAdd")
     addButton.forEach(button => {
         button.onclick = (evento) => {
             const articleId = evento.currentTarget.id
             const selectedArticle = productosDeportivos.find(article => article.id == articleId)
             cardArticle.push(selectedArticle)
-
+            // Se actualiza el localStorage con el nuevo contenido del carrito.
             localStorage.setItem("cardArticles",JSON.stringify(cardArticle))
         }
     })

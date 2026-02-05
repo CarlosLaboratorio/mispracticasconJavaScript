@@ -38,7 +38,10 @@ let cardArticle = JSON.parse(localStorage.getItem("cardArticles")) || []
 let articleContainer = document.getElementById("article-container")
 
 
+
 function renderizarArticulos(articlesArray) {
+    articleContainer.innerHTML = ""
+
     const row = document.createElement("div")
     row.className = "row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mb-4"
     articleContainer.appendChild(row)
@@ -67,14 +70,21 @@ function renderizarArticulos(articlesArray) {
 renderizarArticulos(productosDeportivos)
 
 function agregarAlCarrito () {
-    const addButton = document.querySelectorAll(".articleAdd")
-    addButton.forEach(button => {
-        button.onclick = (evento) => {
+    const addButtons = document.querySelectorAll(".articleAdd")
+
+    addButtons.forEach(button => {
+        button.addEventListener("click", (evento) => {
             const articleId = evento.currentTarget.id
-            const selectedArticle = productosDeportivos.find(article => article.id == articleId)
+            const selectedArticle = productosDeportivos.find(
+                article => article.id == articleId
+            )
+
             cardArticle.push(selectedArticle)
-            // Se actualiza el localStorage con el nuevo contenido del carrito.
-            localStorage.setItem("cardArticles",JSON.stringify(cardArticle))
-        }
+
+            localStorage.setItem(
+                "cardArticles",
+                JSON.stringify(cardArticle)
+            )
+        })
     })
 }

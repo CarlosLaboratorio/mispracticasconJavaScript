@@ -1,4 +1,9 @@
 @charset "UTF-8";
+/* PARA ESTE PROYECTO ACTUAL DE JAVASCRIPT MODERNO */
+body {
+  overflow-x: hidden;
+}
+
 /* =================== VARIABLES ================== */
 /* =================== MIXIN PARA SOMBRAS ================== */
 /* =================== EXTEND PARA TARJETAS CON SOMBRA ================== */

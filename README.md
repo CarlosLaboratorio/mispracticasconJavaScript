@@ -1,8 +1,6 @@
-# tusitiodeportivo
+# mispracticasconJavaScript
 
 <h1 align="center">Hi 👋, I'm Carlos Aguirre</h1>
-
-<h3 align="center">Este proyecto inicia como una innovadora tienda deportiva que irá escalando poco a poco para llegar a hacer combos con descuentos exclusivos, ademas que estará pensado para que el cliente tenga un historial útil para analizar sus gastos. Actualmente, se incorpora dos html estáticos, dos js, imagenes, un archivo de estilos propio, se usa bootstrap pensados para dar un minimo de estilos al simulador. La aplicación está basada en la manipulación del DOM, el uso de eventos, estructuras de datos, funciones de orden superior (forEach, find, reduce) y almacenamiento local, manteniendo separada la estructura HTML de la lógica JavaScript.</h3>
 
 <h3 align="center">A passionate frontend developer from Argentina</h3>
 

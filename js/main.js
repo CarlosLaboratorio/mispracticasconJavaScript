@@ -94,6 +94,7 @@ function agregarAlCarrito () {
             Swal.fire({
                 title: "Agregado",
                 text: `Producto ${selectedArticle.nombre} agregado con exito`,
+                confirmButtonColor: "#3085d6",
                 icon: "success"
             });
         })

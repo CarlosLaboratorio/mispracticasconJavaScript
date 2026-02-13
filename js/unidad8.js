@@ -18,3 +18,10 @@ async function fetchData(){
 }
 
 fetchData()
+
+
+
+ // EJEMPLO ASINCRONISMO BASICO, TODO SE SIGUE EJECUTANDO Y LUEGO DE 2 SEGUNDOS SE EJECUTA CÓDIGO SETTIMEOUT
+console.log("Inicio")
+setTimeout(() => {console.log("Este mensaje se muestra despues 2 segundos.");},2000);
+console.log("Fin")

@@ -91,7 +91,11 @@ function agregarAlCarrito () {
                 "cardArticles",
                 JSON.stringify(cardArticle)
             )
+            Swal.fire({
+                title: "Agregado",
+                text: `Producto ${selectedArticle.nombre} agregado con exito`,
+                icon: "success"
+            });
         })
     })
 }
-
